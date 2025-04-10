@@ -18,7 +18,6 @@ type DoctorDashboardScreenProps = {
 interface Appointment {
   id: string;
   patientId: string;
-  patientName: string;
   doctorId: string;
   doctorName: string;
   date: string;
@@ -123,15 +122,9 @@ const DoctorDashboardScreen: React.FC = () => {
           appointments.map((appointment) => (
             <AppointmentCard key={appointment.id}>
               <ListItem.Content>
-                <ListItem.Title style={styles.patientName as TextStyle}>
-                  Paciente: {appointment.patientName || 'Nome não disponível'}
-                </ListItem.Title>
-                <ListItem.Subtitle style={styles.dateTime as TextStyle}>
+                <ListItem.Title style={styles.dateTime as TextStyle}>
                   {appointment.date} às {appointment.time}
-                </ListItem.Subtitle>
-                <Text style={styles.specialty as TextStyle}>
-                  {appointment.specialty}
-                </Text>
+                </ListItem.Title>
                 <StatusBadge status={appointment.status}>
                   <StatusText status={appointment.status}>
                     {getStatusText(appointment.status)}
@@ -200,16 +193,6 @@ const styles = {
   dateTime: {
     fontSize: 16,
     fontWeight: '700',
-    color: theme.colors.text,
-  },
-  patientName: {
-    fontSize: 16,
-    fontWeight: '700',
-    color: theme.colors.text,
-  },
-  specialty: {
-    fontSize: 14,
-    fontWeight: '500',
     color: theme.colors.text,
   },
 };
