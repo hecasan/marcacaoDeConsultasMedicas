@@ -15,6 +15,7 @@ export const API_ENDPOINTS = {
   // Usuários
   USERS: '/usuarios',
   DOCTORS: '/usuarios/medicos',
+  CHANGE_PASSWORD: '/usuarios',
   
   // Especialidades
   SPECIALTIES: '/especialidades',
