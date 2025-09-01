@@ -34,7 +34,6 @@ const EmptyState: React.FC<EmptyStateProps> = ({
           type={iconType}
           size={40}
           color={theme.colors.text}
-          tvParallaxProperties={undefined}
         />
       </EmptyIcon>
       <EmptyText>{message}</EmptyText>

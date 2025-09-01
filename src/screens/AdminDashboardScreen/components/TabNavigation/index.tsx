@@ -60,7 +60,6 @@ const TabNavigation: React.FC<TabNavigationProps> = ({
               type={tab.iconType}
               size={20}
               color={activeTab === tab.id ? '#fff' : theme.colors.text}
-              tvParallaxProperties={undefined}
             />
           </TabIcon>
           <TabText active={activeTab === tab.id}>

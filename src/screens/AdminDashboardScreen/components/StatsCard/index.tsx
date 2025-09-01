@@ -49,7 +49,6 @@ const StatsCard: React.FC<StatsCardProps> = ({
           type={iconType}
           size={24}
           color={iconColor}
-          tvParallaxProperties={undefined}
         />
       </IconContainer>
       

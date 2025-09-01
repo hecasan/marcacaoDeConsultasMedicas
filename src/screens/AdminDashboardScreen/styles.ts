@@ -15,14 +15,14 @@ export const Container = styled.View`
   background-color: ${theme.colors.background};
 `;
 
-export const ScrollContainer = styled.ScrollView.attrs({
+export const ScrollContainer = styled.ScrollView.attrs(() => ({
   contentContainerStyle: {
     padding: 20,
     paddingBottom: 40,
     flexGrow: 1,
   },
   showsVerticalScrollIndicator: false,
-})``;
+}))``;
 
 export const Header = styled.View`
   margin-bottom: ${theme.spacing.large}px;

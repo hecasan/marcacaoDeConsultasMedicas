@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 import theme from '../../../../styles/theme';
-import { getStatusColor } from '../../utils/statusHelpers';
+import { getStatusColor, AppointmentStatus } from '../../utils/statusHelpers';
 
 /**
  * Estilos para o componente AppointmentCard
@@ -55,25 +55,23 @@ export const DateTime = styled.Text`
   font-weight: 500;
 `;
 
-export const StatusBadge = styled.View<{ status: string }>`
-  background-color: ${props => getStatusColor(props.status as any) + '20'};
+export const StatusBadge = styled.View<{ status: AppointmentStatus }>`
+  background-color: ${(props: { status: AppointmentStatus }) => getStatusColor(props.status) + '20'};
   padding: 6px 12px;
   border-radius: 20px;
   align-self: flex-start;
 `;
 
-export const StatusText = styled.Text<{ status: string }>`
-  color: ${props => getStatusColor(props.status as any)};
+export const StatusText = styled.Text<{ status: AppointmentStatus }>`
+  color: ${(props: { status: AppointmentStatus }) => getStatusColor(props.status)};
   font-size: 12px;
   font-weight: 600;
-  text-transform: uppercase;
 `;
 
 export const ActionContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-top: ${theme.spacing.medium}px;
-  gap: ${theme.spacing.small}px;
 `;
 
 export const ActionButton = styled.TouchableOpacity<{ variant: 'confirm' | 'cancel' }>`
@@ -81,7 +79,8 @@ export const ActionButton = styled.TouchableOpacity<{ variant: 'confirm' | 'canc
   padding: 12px;
   border-radius: 8px;
   align-items: center;
-  background-color: ${props => 
+  margin-horizontal: 4px;
+  background-color: ${(props: { variant: 'confirm' | 'cancel' }) => 
     props.variant === 'confirm' 
       ? theme.colors.success 
       : theme.colors.error
